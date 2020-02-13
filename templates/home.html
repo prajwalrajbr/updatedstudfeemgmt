@@ -1,0 +1,27 @@
+{%extends 'base_layout.html'%}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1><strong>Student Fees Management System</strong></h1>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      	<div class="col-md-6">
+      	<h5>To get the list of the Students, Click below:</h5>
+      	<button class="btn btn-primary"><a href="{% url 'details:list' %}" class="btn btn-success">Student List</a></button>
+      	<br>
+    	<br>
+		</div>
+      	<div class="col-md-6">
+      		<h5>To get the Fees Record, Click below:</h5>
+      		<button class="btn btn-primary"><a href="{% url 'details:fee_record' %}" class="btn btn-info">Fee Record</a></button>
+      	<br>
+    	<br>
+		</div>
+  	</div>
+</div>
+	
+{% endblock  %}

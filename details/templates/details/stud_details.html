@@ -1,0 +1,36 @@
+{%extends 'base_layout.html'%}
+
+{% block content %}
+    
+    <br/>
+    <div class="container">
+        <table class="table table-striped table-bordered table-hover table-condensed" >
+	        <tr><td><h1>Name </h1></td> <td><h1>{{stud_pd.Sname}}</h1></td></tr>
+            <tr><td><h3>USN </h3></td> <td><h3>{{stud_pd.USN}}</h3></tr>
+            <tr><td><p>Gender</p> </td> <td><p> {{stud_pd.Gender}}</p></tr>
+            <tr><td><p>Date Of Birth</p> </td> <td><p>{{stud_pd.DOB}}</p></tr>
+            <tr><td><p>Place Of Birth</p></td> <td><p>{{stud_pd.POB}}</p></tr>
+            <tr><td><p>Phone Number </p></td> <td> <p>{{stud_pd.S_Pno}}</p></tr>
+            <tr><td><p>Address </p></td> <td><p> {{stud_pd.S_Add}}</p></tr>
+            <tr><td><p>Batch  </p></td> <td><p>{{stud_pd.Batch}}</p></tr>
+            <tr><td><strong>Admission Number</strong>  </td> <td><strong>{{stud_ad.Adm_No}}</strong></tr>
+            <tr><td><p>Course  </p></td> <td><p>{{stud_ad.Course}}</p></tr>
+            <tr><td><p>Semester </p></td> <td><p>{{stud_ad.Sem}}</p></tr>
+            <tr><td><p>Branch </p></td> <td><p>{{stud_ad.Branch}}</p></tr>
+            <tr><td><p>Admission Type </p></td> <td><p> {{stud_ad.Adm_Type}}</p></tr>
+            <tr><td><p>Quota </p></td> <td><p>{{stud_ad.Quota}}</p></tr>
+        </table>         
+    </div>
+    <div class="container">
+        <div class="text-center">
+        <button class="btn btn-success"><h5 ><a style="color:black" href="{% url 'entry:update_stud_fee' usn=stud_pd.USN %}">Update Student Fee</a></h5></button>
+        <br/>
+        </div>
+    </div>
+    <div class="container">
+        <div class="text-center">
+        <br/>
+        <button class="btn btn-danger"><h5 ><a style="color:black" href="{% url 'entry:delete_stud_pd' usn=stud_pd.USN %}">Delete Student PD</a></h5></button>
+    </div>
+    </div>
+{% endblock %}

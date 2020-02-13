@@ -1,0 +1,31 @@
+{%extends 'base_layout.html'%}
+{% block content %}
+
+<div class="container">
+    <div class="text-center">
+
+        <div class="col-sm-6">
+            
+        <div class="panel panel-default">
+        <div class="panel-heading"><strong><h3>Please Log-In to continue:</h3></strong></div>
+        <div class="panel-body">
+        <form class="text-center" action="{%url 'accounts:login' %}" method="post">
+        {% csrf_token %}
+            {{form.as_p}}
+
+            {%if msg%}
+            <div class="alert alert-warning" role="alert">  
+               <h2>{{msg}}</h2>      
+            </div>
+            {%endif%}
+            {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{request.GET.next}}">
+            {% endif %}
+            <input type="submit" value="Login">
+        </form>
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

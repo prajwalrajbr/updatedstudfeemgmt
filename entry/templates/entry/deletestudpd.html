@@ -1,0 +1,15 @@
+{%extends 'base_layout.html'%}
+
+{% block content %}
+
+<br/>
+    <div class="container">
+        <h2>Are you sure You want to delete the details of <strong>"<u>{{stud_pd.Sname}}</u>" [ <u>{{stud_pd.USN}}</u> ]</strong> ?</h2>
+        <br/>
+        <form class="form-inline" action="{% url 'entry:delete_stud_pd' usn=stud_pd.USN %}" method="post">
+        {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Confirm</button><br/><br/><button class="btn btn-link"><button class="btn btn-warning"><a href="{% url 'details:list' %}">Cancel</a></button></button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{%extends 'base_layout.html'%}
+{% load static from staticfiles %}
+{% block content %}
+
+<br/>
+<div class="container">
+    <div class="text-center">
+
+        <div class="col-sm-6">
+            
+        <div class="panel panel-default">
+        <div class="panel-heading"><strong><h3>Enter Student Details :</h3></strong></div>
+        <div class="panel-body">
+    <form class="text-left" id="stud-form" action="{% url 'entry:create_stud_pd' %}" method="post">
+    {% csrf_token %}   	
+        {{form1}}
+        {{form2}}
+        <br/>
+        <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Submit">
+  		</div>
+    </form>
+ </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'createstudpd.js' %}"></script> 
+{% endblock %}
